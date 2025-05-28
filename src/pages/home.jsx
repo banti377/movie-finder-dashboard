@@ -3,8 +3,8 @@ import { useDebounce } from 'use-debounce';
 import useMovies from '../hooks/useMovies';
 import Error from '../ui/error';
 import MovieCard from '../ui/movieCard';
-import Pagination from '../ui/Pagination';
 import Spinner from '../ui/spinner';
+import Pagination from '../ui/pagination';
 
 export default function Home() {
   const [searchParams, setSearchParams] = useSearchParams();
