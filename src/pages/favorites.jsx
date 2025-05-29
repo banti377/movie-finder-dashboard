@@ -5,7 +5,7 @@ export default function Favorites() {
   const favorites = useSelector((state) => state.favorites.movies);
 
   return (
-    <div className="min-h-screen bg-white text-black dark:bg-gray-900 dark:text-white">
+    <div className="min-h-[calc(100vh-68px)] bg-white text-black dark:bg-gray-900 dark:text-white">
       <div className="text-center pt-5">
         {favorites.length === 0 ? (
           <p className="text-lg mb-8">No favorite movies yet.</p>
