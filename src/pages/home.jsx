@@ -23,11 +23,9 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-white text-black dark:bg-gray-900 dark:text-white">
-      <div className="text-center">
+      <div className="text-center pt-5">
         {!isLoading && !error && movies.length === 0 && (
-          <p className="text-lg mb-8 pt-48">
-            Search for your favorite movies above!
-          </p>
+          <p className="text-lg mb-8">Search for your favorite movies above!</p>
         )}
 
         {isLoading && <Spinner />}
