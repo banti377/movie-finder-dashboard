@@ -6,7 +6,7 @@ export default function Header({ query, setQuery }) {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <header className="bg-white text-black px-4 py-3 shadow-md dark:bg-gray-900 dark:text-white border-b-2 dark:border-gray-800">
+    <header className="fixed top-0 right-0 left-0 bg-white text-black px-4 py-3 shadow-md dark:bg-gray-900 dark:text-white border-b-2 dark:border-gray-800">
       <div className="flex flex-col sm:flex-row items-center sm:justify-between gap-4">
         <Link to="/" className="text-2xl font-semibold">
           MovieFinder
