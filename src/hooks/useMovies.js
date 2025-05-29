@@ -33,16 +33,16 @@ export default function useMovies(query, page = 1) {
 
         setTotalResults(Number(data.totalResults));
 
-        const detailedMovies = await Promise.all(
-          data.Search.map(async (movie) => {
-            const detailRes = await fetch(
-              `https://www.omdbapi.com/?apikey=${KEY}&i=${movie.imdbID}`
-            );
-            return await detailRes.json();
-          })
-        );
+        // const detailedMovies = await Promise.all(
+        //   data.Search.map(async (movie) => {
+        //     const detailRes = await fetch(
+        //       `https://www.omdbapi.com/?apikey=${KEY}&i=${movie.imdbID}`
+        //     );
+        //     return await detailRes.json();
+        //   })
+        // );
 
-        setMovies(detailedMovies);
+        setMovies(data.Search);
       } catch (err) {
         if (err.name !== 'AbortError') {
           console.error(err.message);

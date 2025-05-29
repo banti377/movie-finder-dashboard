@@ -6,13 +6,13 @@ export default function Header({ query, setQuery }) {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <header className="bg-white text-black px-6 py-4 shadow-md dark:bg-gray-900 dark:text-white flex items-center border-b-2 dark:border-gray-800">
-      <Link to="/" className="text-2xl font-semibold whitespace-nowrap">
-        MovieFinder
-      </Link>
+    <header className="bg-white text-black px-4 py-3 shadow-md dark:bg-gray-900 dark:text-white border-b-2 dark:border-gray-800">
+      <div className="flex flex-col sm:flex-row items-center sm:justify-between gap-4">
+        <Link to="/" className="text-2xl font-semibold">
+          MovieFinder
+        </Link>
 
-      <div className="flex-grow flex justify-center mx-4">
-        <div className="relative w-full max-w-md">
+        <div className="w-60 sm:max-w-md relative">
           <input
             type="text"
             placeholder="Search movies..."
@@ -30,23 +30,24 @@ export default function Header({ query, setQuery }) {
             </button>
           )}
         </div>
-      </div>
 
-      <div className="flex gap-4 items-center">
-        <Link
-          to="/favorites"
-          className="flex items-center gap-1 text-black hover:text-red-600 transition-colors dark:text-white dark:hover:text-red-400"
-        >
-          <HiHeart className="w-5 h-5" />
-          <span>Favorites</span>
-        </Link>
+        <div className="flex gap-4 items-center justify-center">
+          <Link
+            to="/favorites"
+            className="flex items-center gap-1 text-black hover:text-red-600 transition-colors dark:text-white dark:hover:text-red-400"
+          >
+            <HiHeart className="w-5 h-5" />
+            <span className="hidden sm:inline">Favorites</span>
+          </Link>
 
-        <button
-          onClick={toggleTheme}
-          className="p-2.5 rounded-sm transition-all duration-200 hover:bg-gray-100 dark:hover:bg-gray-800"
-        >
-          {theme === 'light' ? <HiOutlineMoon /> : <HiOutlineSun />}
-        </button>
+          <button
+            onClick={toggleTheme}
+            className="p-2.5 rounded-sm transition-all duration-200 hover:bg-gray-100 dark:hover:bg-gray-800"
+            aria-label="Toggle theme"
+          >
+            {theme === 'light' ? <HiOutlineMoon /> : <HiOutlineSun />}
+          </button>
+        </div>
       </div>
     </header>
   );
